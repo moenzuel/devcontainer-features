@@ -1,7 +1,7 @@
 {
     "name": "FluxCD",
     "id": "fluxcd",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Installs the FluxCD v2 CLI.",
     "documentationURL": "https://github.com/moenzuel/devcontainer-features/tree/main/src/fluxcd",
     "options": {
