@@ -1,0 +1,30 @@
+{
+    "name": "ASDF-VM",
+    "id": "asdf",
+    "version": "0.1.0",
+    "description": "Adds the ASDF-VM and installs provided tools",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": ["latest", "0.10.2"],
+            "default": "latest",
+            "description": "Version of ASDF-VM to install."
+        },
+        "plugins": {
+            "type": "string",
+            "default": "",
+            "proposals": ["elixir", "erlang,elixir https://github.com/asdf-vm/asdf-elixir.git", "erlang,elixir"],
+            "description": "Optional comma separated list of ASDF plugins to add."
+        },
+        "toolVersions": {
+            "type": "string",
+            "default": "",
+            "proposals": ["elixir 1.14.2-otp-25"],
+            "description": "Optional comma separated list of ASDF packages to install."
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils",
+        "ghcr.io/devcontainers/features/git"
+    ]
+}
