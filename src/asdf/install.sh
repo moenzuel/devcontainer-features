@@ -83,10 +83,15 @@ if [ ! -z "${TOOLVERSIONS}" ] && [ "${TOOLVERSIONS}" != "none" ]; then
     IFS=, read -ra TOOL_ARRAY <<< "$TOOLVERSIONS"
     for i in "${TOOL_ARRAY[@]}"
     do
-        asdf install ${i}
+        parts=( $i )
+        if [ "${parts[1]}" == "latest" ]; then
+            parts[1]="$(asdf latest ${parts[0]})"
+        fi
+
+        asdf install ${parts[0]} ${parts[1]}
         # set root global so tool can be used for other installs
-        asdf global ${i}
-        echo "${i}" >> ${_REMOTE_USER_HOME}/.tool-versions
+        asdf global ${parts[0]} ${parts[1]}
+        echo "${parts[0]} ${parts[1]}" >> ${_REMOTE_USER_HOME}/.tool-versions
     done
 fi
 

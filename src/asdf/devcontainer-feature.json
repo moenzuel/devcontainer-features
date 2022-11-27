@@ -1,7 +1,7 @@
 {
     "name": "ASDF-VM",
     "id": "asdf",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Adds the ASDF-VM and installs provided tools",
     "options": {
         "version": {
